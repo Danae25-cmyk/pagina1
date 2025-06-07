@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Servicios - Esther Machaca</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background: linear-gradient(to bottom right, #e0f7fa, #ffffff);
+      color: #333;
+    }
+
+    header {
+      background: linear-gradient(120deg, #007BFF, #00BCD4);
+      color: white;
+      padding: 30px;
+      text-align: center;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 36px;
+    }
+
+    .servicios-container {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      padding: 40px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .caja-servicio {
+      display: flex;
+      background-color: white;
+      border-radius: 15px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .caja-servicio:hover {
+      transform: scale(1.015);
+      box-shadow: 0 12px 25px rgba(0, 123, 255, 0.2);
+    }
+
+    .caja-servicio img {
+      width: 250px;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .info-servicio {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .info-servicio h3 {
+      margin: 0 0 10px;
+      font-size: 24px;
+      color: #007BFF;
+    }
+
+    .info-servicio p {
+      margin: 0;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    .volver-btn {
+      display: block;
+      margin: 40px auto 60px;
+      padding: 12px 25px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      text-decoration: none;
+      text-align: center;
+      width: fit-content;
+      transition: background-color 0.3s ease;
+    }
+
+    .volver-btn:hover {
+      background-color: #0056b3;
+    }
+
+    @media (max-width: 768px) {
+      .caja-servicio {
+        flex-direction: column;
+      }
+
+      .caja-servicio img {
+        width: 100%;
+        height: 200px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Servicios</h1>
+    <p>Especialidades para tu bienestar</p>
+  </header>
+
+  <section class="servicios-container">
+    <div class="caja-servicio">
+      <img src="https://www.lainter.edu.mx/wp-content/uploads/2023/06/Diseno-sin-titulo-1.jpg" alt="Rehabilitación">
+      <div class="info-servicio">
+        <h3>Rehabilitación Física</h3>
+        <p>La rehabilitación física es un proceso terapéutico personalizado que busca recuperar la movilidad, fuerza y funcionalidad del cuerpo después de una lesión, cirugía o condición neuromuscular. A través de ejercicios y técnicas específicas, permite mejorar la calidad de vida del paciente, prevenir complicaciones y fomentar la autonomía en sus actividades cotidianas.</p>
+      </div>
+    </div>
+
+    <div class="caja-servicio">
+      <img src="https://www.cty.es/wp-content/uploads/2018/01/parafango-spa.jpg" alt="Terapia Manual">
+      <div class="info-servicio">
+        <h3>Parafinoterapia</h3>
+        <p>La parafinoterapia es una técnica que consiste en la aplicación de cera de parafina caliente sobre zonas específicas del cuerpo, como manos, pies o articulaciones. Este calor húmedo ayuda a aliviar dolores articulares y musculares, mejora la circulación sanguínea, incrementa la flexibilidad y, además, proporciona una profunda hidratación a la piel, siendo ideal para personas con artritis, rigidez o piel seca.</p>
+      </div>
+    </div>
+
+    <div class="caja-servicio">
+      <img src="https://fuenteplateada.es/wp-content/uploads/2024/02/5-masajes-para-aliviar-el-estres-y-la-tension-muscular-1024x683.jpg" alt="Ejercicio Terapéutico">
+      <div class="info-servicio">
+        <h3>Masajes Relajantes</h3>
+        <p>Los masajes relajantes son una técnica manual que busca liberar tensiones acumuladas en los músculos y tejidos blandos del cuerpo. Con movimientos suaves y rítmicos, esta terapia ayuda a reducir el estrés, mejorar la circulación, aliviar contracturas musculares y favorecer un estado general de calma y bienestar, siendo muy recomendada para personas con sobrecarga emocional o física.</p>
+      </div>
+    </div>
+
+    <div class="caja-servicio">
+      <img src="http://www.cosmetologas.com/data/img_cont/fk_editor/image/ozonoterapia_morales_01.jpg" alt="Masoterapia">
+      <div class="info-servicio">
+        <h3>Ozonoterapia</h3>
+        <p>La ozonoterapia utiliza una mezcla de oxígeno y ozono con fines terapéuticos. Puede aplicarse de forma local o sistémica, dependiendo del caso. En fisioterapia, es eficaz para reducir inflamaciones, aliviar dolores crónicos, estimular la regeneración celular y mejorar la oxigenación de los tejidos, ayudando así en procesos de recuperación y cicatrización.</p>
+      </div>
+    </div>
+  </section>
+
+  <a class="volver-btn" href="index C.html">← Volver al inicio</a>
+</body>
+</html>

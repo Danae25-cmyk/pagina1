@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Esther Machaca - Fisioterapia</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    header {
+      background-color: #007BFF;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo, .profile-photo {
+      width: 60px;
+      height: 60px;
+      background: white;
+      border-radius: 50%;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .header-title {
+      text-align: center;
+      flex-grow: 1;
+    }
+
+    .header-title h1 {
+      margin: 0;
+      font-size: 24px;
+    }
+
+    .header-title p {
+      margin: 0;
+      font-style: italic;
+      font-size: 14px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      background-color: #ffffff;
+      padding: 20px 0;
+      border-bottom: 1px solid #ddd;
+      flex-wrap: wrap;
+    }
+
+    nav button {
+      padding: 14px 28px;
+      background-color: #e3f2fd;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+    }
+
+    nav button:hover {
+      background-color: #bbdefb;
+    }
+
+    #horario-info {
+      display: none;
+      background-color: #f0f0f0;
+      padding: 10px 15px;
+      text-align: left;
+      margin-top: 8px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      position: absolute;
+      z-index: 1;
+      font-size: 14px;
+      white-space: pre-line;
+    }
+
+    .descripcion {
+  background-image: url('https://ciosalud.com/wp-content/uploads/2024/11/tecnicas-kinesiologia-1024x726.jpg'); /* Puedes reemplazar la imagen */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  padding: 14% 20px;
+  margin: 20px;
+  border-radius: 10px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 250px;
+  font-size: 30px;
+  opacity: 0.7;
+  text-shadow: 2px 8px 8px #333;
+}
+
+
+
+    .agendar {
+      display: block;
+      margin: 30px auto;
+      padding: 18px 36px;
+      font-size: 18px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .agendar:hover {
+      background-color: #0056b3;
+    }
+
+    #formulario-cita {
+      display: none;
+      background-color: white;
+      margin: 20px auto;
+      width: 90%;
+      max-width: 450px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    #formulario-cita h3 {
+      margin-top: 0;
+      text-align: center;
+    }
+
+    input, textarea {
+      width: 100%;
+      margin: 10px 0;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 15px;
+    }
+
+    button[type="submit"] {
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      padding: 14px;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #0056b3;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      nav {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo" style="background-image: url('logo.png');"></div>
+    <div class="header-title">
+      <h1>Esther Machaca</h1>
+      <p>Fisioterapia - Kinesiología</p>
+    </div>
+    <div class="profile-photo" style="background-image: url('perfil.jpg');"></div>
+  </header>
+
+  <nav>
+    <button onclick="document.getElementById('servicios').scrollIntoView({ behavior: 'smooth' })">Servicios</button>
+>Servicios</button>
+    <button onclick="window.open('https://maps.app.goo.gl/x247Ace4AKF1vnum8', '_blank')">Locación</button>
+    <div style="position: relative;" onmouseenter="mostrarHorario()" onmouseleave="ocultarHorario()">
+      <button>Horario de Atención</button>
+      <div id="horario-info">
+        <strong>Lunes a Viernes:</strong> 08:00 am - 08:00 pm
+        <br><strong>Sábado:</strong> 08:00 am - 02:00 pm
+        <br><strong>Domingo:</strong> Cerrado
+      </div>
+    </div>
+  </nav>
+<div id="mapa" style="display: none; text-align: center; margin: 20px;">
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3826.1130674431425!2d-68.12938582492455!3d-16.500000684233997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x915edf63ecb09d45%3A0xe4e388f6f7d9b491!2sPlaza%20Murillo%2C%20La%20Paz%2C%20Bolivia!5e0!3m2!1ses!2sbo!4v1717680000000"
+    width="90%" height="400" style="border:0; border-radius: 10px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+  </iframe>
+</div>
+
+  <div class="descripcion">
+    <p>Bienvenidos a mi consulta. Soy especialista en fisioterapia y kinesiología, comprometida con tu bienestar físico y emocional.</p>
+  </div>
+
+  <button class="agendar" onclick="toggleFormulario()">¡Quiero agendar una cita!</button>
+
+  <div id="formulario-cita">
+    <h3>Agendar Cita</h3>
+    <input type="text" placeholder="Nombre completo" required>
+    <input type="email" placeholder="Correo electrónico" required>
+    <textarea placeholder="Motivo de la consulta" rows="4" required></textarea>
+    <button type="submit">Enviar</button>
+  </div>
+
+  <script>
+    function mostrarHorario() {
+      document.getElementById("horario-info").style.display = "block";
+    }
+
+    function ocultarHorario() {
+      document.getElementById("horario-info").style.display = "none";
+    }
+
+    function toggleFormulario() {
+      const form = document.getElementById("formulario-cita");
+      form.style.display = form.style.display === "none" || form.style.display === "" ? "block" : "none";
+    }
+    function toggleMapa() {
+  const mapa = document.getElementById("mapa");
+  mapa.style.display = mapa.style.display === "none" || mapa.style.display === "" ? "block" : "none";
+}
+
+  </script>
+
+</body>
+</html>
